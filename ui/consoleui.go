@@ -15,35 +15,35 @@ import (
 
 // ConsoleUI handles user input and output
 type ConsoleUI struct {
-	scanner *bufio.Scanner
+	Scanner *bufio.Scanner
 }
 
 // NewConsoleUI constructor
 func NewConsoleUI() *ConsoleUI {
-	return &ConsoleUI{scanner: bufio.NewScanner(os.Stdin)}
+	return &ConsoleUI{Scanner: bufio.NewScanner(os.Stdin)}
 }
 
 // GetIntInput prompts for integer input
 func (ui *ConsoleUI) GetIntInput(prompt string) int {
 	fmt.Print(prompt)
-	ui.scanner.Scan()
-	val, _ := strconv.Atoi(ui.scanner.Text())
+	ui.Scanner.Scan()
+	val, _ := strconv.Atoi(ui.Scanner.Text())
 	return val
 }
 
 // GetFloatInput prompts for float input
 func (ui *ConsoleUI) GetFloatInput(prompt string) float64 {
 	fmt.Print(prompt)
-	ui.scanner.Scan()
-	val, _ := strconv.ParseFloat(ui.scanner.Text(), 64)
+	ui.Scanner.Scan()
+	val, _ := strconv.ParseFloat(ui.Scanner.Text(), 64)
 	return val
 }
 
 // GetStringInput prompts for string input
 func (ui *ConsoleUI) GetStringInput(prompt string) string {
 	fmt.Print(prompt)
-	ui.scanner.Scan()
-	return ui.scanner.Text()
+	ui.Scanner.Scan()
+	return ui.Scanner.Text()
 }
 
 // GetSizesInput prompts for sizes
